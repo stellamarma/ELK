@@ -1,0 +1,1 @@
+# ELK initgit add README.mdgit commit -m first commitgit branch -M maingit remote add origin git@github.com:stellamarma/ELK.gitgit push -u origin main
