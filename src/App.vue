@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.vue'
 import HeroBanner from './components/HeroBanner.vue'
 import PhotoViewer from './components/PhotoViewer.vue'
 import PhotoContact from './components/PhotoContact.vue'
+import CommentSection from './components/CommentSection.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import PhotoContact from './components/PhotoContact.vue'
     <HeroBanner /> <!-- Το Banner μπαίνει πρώτο -->
     <PhotoViewer />
     <PhotoContact />
+    <CommentSection/>
   </div>
 </template>
 

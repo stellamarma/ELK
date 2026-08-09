@@ -49,6 +49,11 @@ const scrollToSection = (id) => {
             Επικοινωνία
           </a>
         </li>
+                <li class="nav-item">
+          <a href="#comments" class="nav-link" @click.prevent="scrollToSection('comments')">
+            Σχόλια
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

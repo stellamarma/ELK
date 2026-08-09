@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PhotoViewer from '../components/PhotoViewer.vue'
 // @ts-ignore
 import PhotoContact from '../components/PhotoContact.vue'
+// @ts-ignore
+import CommentSection from '../components/CommentSection.vue'
 
 const routes = [
   {
@@ -14,7 +16,13 @@ const routes = [
     path: '/contact',
     name: 'PhotoContact',
     component: PhotoContact
-  }
+  },
+    {
+    path: '/comment',
+    name: 'comment',
+    component: CommentSection
+  },
+
 ]
 
 const router = createRouter({
