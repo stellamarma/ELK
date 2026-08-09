@@ -25,8 +25,8 @@ const routes = [
     component: PhotoContact
   },
   {
-    path: '/comment',
-    name: 'comment',
+    path: '/comments',
+    name: 'comments',
     component: CommentSection
   }
 ]

@@ -15,9 +15,10 @@ const closeMobileMenu = () => {
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <router-link to="/" class="brand-logo" @click="closeMobileMenu">
+      <!-- Logo: Σκρολάρει στην κορυφή (#hero) -->
+      <a href="#hero" class="brand-logo" @click="closeMobileMenu">
         Εκκλησιαστικό Λύκειο Καβάλας
-      </router-link>
+      </a>
 
       <!-- Hamburger Button (Mobile) -->
       <button 
@@ -31,27 +32,27 @@ const closeMobileMenu = () => {
         <span class="bar"></span>
       </button>
 
-      <!-- Menu Items -->
+      <!-- Menu Items με anchor links (#) -->
       <ul class="nav-menu" :class="{ 'is-open': isMobileOpen }">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" @click="closeMobileMenu">
+          <a href="#viewer" class="nav-link" @click="closeMobileMenu">
             Φωτογραφικό Υλικό
-          </router-link>
+          </a>
         </li>
         <li class="nav-item">
-          <router-link to="/video" class="nav-link" @click="closeMobileMenu">
+          <a href="#video" class="nav-link" @click="closeMobileMenu">
             Βίντεο
-          </router-link>
+          </a>
         </li>
         <li class="nav-item">
-          <router-link to="/contact" class="nav-link" @click="closeMobileMenu">
+          <a href="#contact" class="nav-link" @click="closeMobileMenu">
             Επικοινωνία
-          </router-link>
+          </a>
         </li>
         <li class="nav-item">
-          <router-link to="/comment" class="nav-link" @click="closeMobileMenu">
+          <a href="#comments" class="nav-link" @click="closeMobileMenu">
             Σχόλια
-          </router-link>
+          </a>
         </li>
       </ul>
     </div>
