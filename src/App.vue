@@ -4,6 +4,7 @@ import HeroBanner from './components/HeroBanner.vue'
 import PhotoViewer from './components/PhotoViewer.vue'
 import PhotoContact from './components/PhotoContact.vue'
 import CommentSection from './components/CommentSection.vue';
+import VideoSection from './components/VideoSection.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import CommentSection from './components/CommentSection.vue';
     <HeroBanner /> <!-- Το Banner μπαίνει πρώτο -->
     <PhotoViewer />
     <PhotoContact />
+    <VideoSection />
     <CommentSection/>
   </div>
 </template>

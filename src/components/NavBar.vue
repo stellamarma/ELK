@@ -7,23 +7,17 @@ const toggleMobileMenu = () => {
   isMobileOpen.value = !isMobileOpen.value
 }
 
-// Συνάρτηση για Scroll σε συγκεκριμένο ID
-const scrollToSection = (id) => {
-  isMobileOpen.value = false // Κλείνει το mobile μενού
-  
-  const element = document.getElementById(id)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+const closeMobileMenu = () => {
+  isMobileOpen.value = false
 }
 </script>
 
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo" @click.prevent="scrollToSection('hero')">
+      <router-link to="/" class="brand-logo" @click="closeMobileMenu">
         Εκκλησιαστικό Λύκειο Καβάλας
-      </a>
+      </router-link>
 
       <!-- Hamburger Button (Mobile) -->
       <button 
@@ -40,19 +34,24 @@ const scrollToSection = (id) => {
       <!-- Menu Items -->
       <ul class="nav-menu" :class="{ 'is-open': isMobileOpen }">
         <li class="nav-item">
-          <a href="#viewer" class="nav-link" @click.prevent="scrollToSection('viewer')">
+          <router-link to="/" class="nav-link" @click="closeMobileMenu">
             Φωτογραφικό Υλικό
-          </a>
+          </router-link>
         </li>
         <li class="nav-item">
-          <a href="#contact" class="nav-link" @click.prevent="scrollToSection('contact')">
-            Επικοινωνία
-          </a>
+          <router-link to="/video" class="nav-link" @click="closeMobileMenu">
+            Βίντεο
+          </router-link>
         </li>
-                <li class="nav-item">
-          <a href="#comments" class="nav-link" @click.prevent="scrollToSection('comments')">
+        <li class="nav-item">
+          <router-link to="/contact" class="nav-link" @click="closeMobileMenu">
+            Επικοινωνία
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/comment" class="nav-link" @click="closeMobileMenu">
             Σχόλια
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -95,7 +94,7 @@ const scrollToSection = (id) => {
   text-decoration: none;
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
-  white-space: nowrap; /* Αποτρέπει το απότομο σπάσιμο σε πολλές γραμμές */
+  white-space: nowrap;
 }
 
 .brand-logo:hover {
@@ -123,8 +122,9 @@ const scrollToSection = (id) => {
   display: block;
 }
 
-.nav-link:hover {
-  color: #d4af37; /* Χρυσό στο Hover */
+.nav-link:hover,
+.nav-link.router-link-exact-active {
+  color: #d4af37; /* Χρυσό στο Hover & Active */
   background-color: rgba(212, 175, 55, 0.1);
   border-color: rgba(212, 175, 55, 0.4);
 }
@@ -144,7 +144,7 @@ const scrollToSection = (id) => {
 .bar {
   width: 25px;
   height: 2px;
-  background-color: #d4af37; /* Χρυσές γραμμές */
+  background-color: #d4af37;
   border-radius: 1px;
   transition: all 0.3s ease;
 }
@@ -156,8 +156,8 @@ const scrollToSection = (id) => {
   }
 
   .brand-logo {
-    font-size: 1.05rem; /* Μικραίνει το κείμενο για να χωράει σε μία γραμμή */
-    white-space: normal; /* Επιτρέπει ομαλή προσαρμογή αν η οθόνη είναι πολύ μικρή */
+    font-size: 1.05rem;
+    white-space: normal;
     line-height: 1.2;
     max-width: 80%;
   }
@@ -168,7 +168,7 @@ const scrollToSection = (id) => {
 
   .nav-menu {
     position: absolute;
-    top: calc(100% + 0.75rem); /* Εμφανίζεται ακριβώς κάτω από το navbar */
+    top: calc(100% + 0.75rem);
     left: -1rem;
     right: -1rem;
     width: calc(100% + 2rem);
@@ -185,7 +185,7 @@ const scrollToSection = (id) => {
   }
 
   .nav-menu.is-open {
-    max-height: 200px;
+    max-height: 300px; /* Αυξήθηκε για να χωράει και το 4ο link */
     padding: 1rem 0;
   }
 

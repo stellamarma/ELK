@@ -101,7 +101,7 @@ onMounted(() => {
   <section id="comments" class="comments-container">
     <h2 class="section-title">Σχόλια & Εντυπώσεις</h2>
     <div class="decorative-divider">
-      <span class="cross">☦</span>
+      <span class="cross">✝</span>
     </div>
 
     <!-- Φόρμα Υποβολής -->

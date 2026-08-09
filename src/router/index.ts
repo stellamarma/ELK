@@ -5,6 +5,8 @@ import PhotoViewer from '../components/PhotoViewer.vue'
 import PhotoContact from '../components/PhotoContact.vue'
 // @ts-ignore
 import CommentSection from '../components/CommentSection.vue'
+// @ts-ignore
+import VideoSection from '../components/VideoSection.vue'
 
 const routes = [
   {
@@ -13,16 +15,20 @@ const routes = [
     component: PhotoViewer
   },
   {
+    path: '/video',
+    name: 'VideoSection',
+    component: VideoSection
+  },
+  {
     path: '/contact',
     name: 'PhotoContact',
     component: PhotoContact
   },
-    {
+  {
     path: '/comment',
     name: 'comment',
     component: CommentSection
-  },
-
+  }
 ]
 
 const router = createRouter({
